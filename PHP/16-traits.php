@@ -8,7 +8,7 @@ trait Logavel
 {
     public function registrarLog($mensagem)
     {
-        return date('Y-m-d H:i:s') . " Log: $mensagem";
+        echo date('Y-m-d H:i:s') . " Log: $mensagem" . PHP_EOL;
     }
 }
 
