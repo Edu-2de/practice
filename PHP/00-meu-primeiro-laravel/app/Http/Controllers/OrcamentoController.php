@@ -39,4 +39,13 @@ class OrcamentoController extends Controller
     {
         return view('formulario');
     }
+
+
+
+    public function index(){
+        $orcamentos = Orcamento::all();
+        return view('lista', [
+            'orcamentos' => $orcamentos
+        ]);
+    }
 }
