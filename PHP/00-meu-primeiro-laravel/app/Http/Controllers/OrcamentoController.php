@@ -59,4 +59,12 @@ class OrcamentoController extends Controller
 
         return redirect('/');
     }
+
+    public function editar($id)
+    {
+        $orcamento = Orcamento::findOrFail($id);
+        return view('editar', [
+            'orcamento' => $orcamento
+        ]);
+    }
 }

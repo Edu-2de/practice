@@ -28,7 +28,7 @@
                         <td class="p-3">{{ $item->total_horas }}h</td>
                         <td class="p-3 font-bold text-green-600">R$ {{ $item->valor_final }}</td>
                         <td class="p-3 text-center">
-                            <a href="#" class="text-blue-600 hover:underline text-sm">Editar</a>
+                            <a href="/orcamento/{{$item->id}}/editar" class="text-blue-600 hover:underline text-sm">Editar</a>
                             <form action="/orcamento/{{ $item->id }}" method="POST" onsubmit="return confirm('Tem certeza?')">
                                 @csrf
                                 @method('DELETE')

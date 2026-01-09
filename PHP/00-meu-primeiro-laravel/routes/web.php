@@ -11,3 +11,5 @@ Route::post('/calcular', [OrcamentoController::class, 'calcular']);
 Route::get('/', [OrcamentoController::class, 'index']);
 
 Route::delete('/orcamento/{id}', [OrcamentoController::class, 'excluir']);
+
+Route::get('/orcamento/{id}/editar', [OrcamentoController::class, 'editar']);
