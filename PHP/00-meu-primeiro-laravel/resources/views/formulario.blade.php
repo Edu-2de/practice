@@ -19,7 +19,7 @@
 
             <div class="mb-4">
                 <label class="block mb-1 text-sm font-semibold">Nome do Cliente:</label>
-                <input type="text" name="cliente" class="w-full border p-2 rounded focus:ring-2 focus:ring-blue-500 outline-none" required>
+                <input  type="text" name="cliente" class="w-full border p-2 rounded focus:ring-2 focus:ring-blue-500 outline-none" required>
             </div>
 
             <div class="mb-4">

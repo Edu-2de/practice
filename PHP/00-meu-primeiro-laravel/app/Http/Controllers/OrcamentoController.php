@@ -32,7 +32,7 @@ class OrcamentoController extends Controller
             'v' => $valor,
             'h' => $horas,
             'total' => $resultado
-        ]);
+        ])->with('sucesso', 'Orçamento cadastrado com sucesso!');
     }
 
     public function mostrarFormulario()
@@ -57,7 +57,7 @@ class OrcamentoController extends Controller
 
         $orcamento->delete();
 
-        return redirect('/');
+        return redirect('/')->with('sucesso', 'Orçamento excluido com sucesso!');
     }
 
     public function editar($id)
@@ -89,6 +89,6 @@ class OrcamentoController extends Controller
             'valor_final' => $novoValorFinal
         ]);
 
-        return redirect('/');
+        return redirect('/')->with('sucesso', 'Orçamento atualizado com sucesso!');
     }
 }

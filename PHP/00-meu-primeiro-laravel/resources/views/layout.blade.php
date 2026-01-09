@@ -13,6 +13,14 @@
     </div>
 
     <div class="container mx-auto px-4">
+
+        @if(session('sucesso'))
+            <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4 shadow-sm" role="alert">
+                <p class="font-bold">Sucesso!</p>
+                <p>{{ session('sucesso') }}</p>
+            </div>
+        @endif
+
         @yield('conteudo')
     </div>
 
