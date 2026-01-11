@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Orcamento;
+use App\Models\Cliente;
 
 class OrcamentoController extends Controller
 {
@@ -34,13 +35,6 @@ class OrcamentoController extends Controller
             'total' => $resultado
         ])->with('sucesso', 'Orçamento cadastrado com sucesso!');
     }
-
-    public function mostrarFormulario()
-    {
-        return view('formulario');
-    }
-
-
 
     public function index()
     {
@@ -91,4 +85,18 @@ class OrcamentoController extends Controller
 
         return redirect('/')->with('sucesso', 'Orçamento atualizado com sucesso!');
     }
+
+
+
+    public function mostrarFormulario()
+    {
+        $clientes = Cliente::all();
+
+        return view('formulario', [
+            'clientes' => $clientes
+        ]);
+    }
+
+
+    
 }
