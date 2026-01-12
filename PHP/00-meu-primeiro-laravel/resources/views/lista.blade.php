@@ -23,7 +23,7 @@
             <tbody>
                 @foreach($orcamentos as $item)
                     <tr class="border-b hover:bg-gray-50 text-gray-800">
-                        <td class="p-3">{{ $item->cliente }}</td>
+                        <td class="p-3">{{ $item->cliente->nome }}</td>
                         <td class="p-3">R$ {{ $item->valor_hora }}</td>
                         <td class="p-3">{{ $item->total_horas }}h</td>
                         <td class="p-3 font-bold text-green-600">R$ {{ $item->valor_final }}</td>

@@ -12,9 +12,12 @@
             @csrf
             @method('PUT')
 
+            @foreach($cliente as $cliente)
+                <option value="{{cliente -> id}}" {{$orcamento->cliente_id == $cliente->id? 'selected' : ''}}>{{$cliente->nome}}</option>
+            @endforeach
             <div class="mb-4">
                 <label class="block mb-1 text-sm font-semibold">Nome do Cliente:</label>
-                <input type="text" name="cliente" value="{{ $orcamento->cliente }}" class="w-full border p-2 rounded..." required>
+                <input type="text" name="cliente" value="{{ $orcamento->cliente->nome }}" class="w-full border p-2 rounded..." required>
             </div>
 
             <div class="mb-4">

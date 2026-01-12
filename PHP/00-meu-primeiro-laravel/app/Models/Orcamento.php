@@ -7,7 +7,7 @@ use App\Models\Cliente;
 
 class Orcamento extends Model
 {
-    protected $fillable = ['cliente', 'valor_hora', 'total_horas', 'valor_final'];
+    protected $fillable = ['cliente_id', 'valor_hora', 'total_horas', 'valor_final'];
 
     public function cliente()
     {

@@ -51,8 +51,11 @@ class OrcamentoController extends Controller
     public function editar($id)
     {
         $orcamento = Orcamento::findOrFail($id);
+        $clientes = Cliente::all();
+
         return view('editar', [
-            'orcamento' => $orcamento
+            'orcamento' => $orcamento,
+            'clientes' => $clientes
         ]);
     }
 
