@@ -30,9 +30,20 @@ class OrcamentoController extends Controller
         return redirect('/')->with('sucesso', 'Orçamento criado com sucesso!');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $orcamentos = Orcamento::all();
+        $query = Orcamento::query();
+
+        if ($request->has('busca') && $request->input('busca') != '') {
+            $texto = $request->input('busca');
+
+            $query->whereHas('cliente', function ($q) use ($texto) {
+                $q->where('nome', 'like', "%{$texto}%");
+            });
+        }
+
+        $orcamentos = $query->get();
+
         return view('lista', [
             'orcamentos' => $orcamentos
         ]);

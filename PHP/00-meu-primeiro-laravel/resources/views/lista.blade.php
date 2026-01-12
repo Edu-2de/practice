@@ -10,6 +10,26 @@
     </div>
 
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="mb-4">
+            <form action="/" method="GET" class="flex gap-2">
+                <input
+                    type="text"
+                    name="busca"
+                    placeholder="Buscar por nome do cliente..."
+                    value="{{ request('busca') }}"
+                    class="border p-2 rounded w-full focus:ring-2 focus:ring-blue-500 outline-none"
+                >
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded font-bold hover:bg-blue-700">
+                    Buscar
+                </button>
+
+                @if(request('busca'))
+                    <a href="/" class="bg-gray-500 text-white px-4 py-2 rounded font-bold hover:bg-gray-600 flex items-center">
+                        Limpar
+                    </a>
+                @endif
+            </form>
+        </div>
         <table class="w-full">
             <thead class="bg-gray-200 text-gray-700">
                 <tr>
