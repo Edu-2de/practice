@@ -80,8 +80,6 @@ class OrcamentoController extends Controller
         return redirect('/')->with('sucesso', 'Orçamento atualizado com sucesso!');
     }
 
-
-
     public function mostrarFormulario()
     {
         $clientes = Cliente::all();
