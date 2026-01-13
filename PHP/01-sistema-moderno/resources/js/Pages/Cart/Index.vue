@@ -3,18 +3,36 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head, Link, router } from "@inertiajs/vue3";
 import { computed } from "vue";
 
-// Recebe os itens do Laravel
 const props = defineProps({
     cartItems: Array,
 });
 
-// CALCULA O TOTAL AUTOMATICAMENTE 🧮
-// O reduce percorre a lista somando (preço * quantidade)
 const total = computed(() => {
     return props.cartItems.reduce((acc, item) => {
         return acc + parseFloat(item.product.price) * item.quantity;
     }, 0);
 });
+
+const updateQuantity = (item, newQuantity) => {
+    if (newQuantity < 1) return;
+    router.patch(
+        `/cart/${item.id}`,
+        {
+            quantity: newQuantity,
+        },
+        {
+            preserveScroll: true,
+        }
+    );
+};
+
+const removeItem = (item) => {
+    if (confirm("Tem certeza que quer remover este item?")) {
+        router.delete(`/cart/${item.id}`, {
+            preserveScroll: true,
+        });
+    }
+};
 </script>
 
 <template>
