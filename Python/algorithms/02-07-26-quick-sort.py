@@ -1,8 +1,3 @@
-#Implements Quick Sort
-
-import math
-
-
 class QuickSort:
   def __init__(self):
     self.list = []
@@ -14,15 +9,7 @@ class QuickSort:
     return
 
   def quick_sort(self):
-    list = self.list
-    listLength = len(list)
-
-    if listLength <= 1:
-      return
-
-    for i in range(listLength):
-      for j in range(i + 1, len(listLength)):
-        self.quick_sort_rercurse(listLength[i], listLength[j])
+    #TODO: Make method
     return
 
   def quick_sort_rercurse(self, firstItem, secondItem, referenceItem):
@@ -37,7 +24,7 @@ class QuickSort:
     return text
 
 
-test = Selection()
+test = QuickSort()
 test.push(2)
 test.push(3)
 test.push(4)
