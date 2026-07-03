@@ -1,7 +1,4 @@
-#Implements Selection Sort
-
-
-class Selection:
+class SelectionSort:
   def __init__(self):
     self.list = []
 
@@ -37,7 +34,7 @@ class Selection:
     return text
 
 
-test = Selection()
+test = SelectionSort()
 test.push(2)
 test.push(3)
 test.push(4)
