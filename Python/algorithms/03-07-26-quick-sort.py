@@ -1,3 +1,6 @@
+import math
+
+
 class QuickSort:
   def __init__(self):
     self.list = []
@@ -13,10 +16,22 @@ class QuickSort:
     return
 
   def quick_sort_rercurse(self, list):
-    if len(list) == 0:
-      return []
+    if len(list) <= 1:
+      return list
 
-    referenceItem = list[0]
+    first = list[0]
+    middle = list[len(list) // 2]
+    last = list[-1]
+
+    referenceItem = sorted([first, middle, last])[1]
+
+    # sum = 0
+    # for i in list:
+    #   sum += i
+    # media = sum / len(list)
+    # referenceItem = min(list, key=lambda x: abs(x - media))
+    # print(sum)
+
     lowerThanReference = []
     biggerThanReference = []
     equalThanReference = []
